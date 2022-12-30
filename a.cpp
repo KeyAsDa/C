@@ -1,6 +1,7 @@
 #include <iostream>
 #include <ctime>
-#include <cstdlib>
+#include <Windows.h>
+#include <cmath>
 #define MAX 50
 using namespace std;
 
@@ -40,14 +41,52 @@ void random40GiaTriCuoi(int a[])
     }
 }
 
-//XUẤT MẢNG VỪA TẠO
-// void xuatMang(int a[])
-// {
-//     for(int i = 0; i < MAX; i++)
-//     {
-//         cout << a[i] << "\t";
-//     }
-// }
+// HÀM TÌM SỐ NGUYÊN TỐ
+bool timSoNguyenTo(int n)
+{
+    if(n >= 2)
+    {
+        for(int i = 2; i <= sqrt(n); i++)
+        {
+            if(n % i == 0)
+                return false;
+        }
+        return true;
+    }
+    else
+        return false;
+}
+
+//HÀM TÌM SỐ CÓ TỔNG CÁC CHỮ SỐ LÀ SỐ CHẴN
+int timSo(int n)
+{
+    int bien;
+    int tong = 0;
+    while(n != 0)
+    {
+        bien = n % 10;
+        tong = tong + bien;
+        n = n / 10;
+    }
+    return tong;
+}
+
+//SẮP XẾP MẢNG GIẢM DẦN
+void mangGiamDan(int a[])
+{
+    for(int i = 0; i < MAX - 1; i++)
+    {
+        for(int j = 0; j < MAX; j++)
+        {
+            if(a[i] > a[j])
+            {
+                int c = a[i];
+                a[i] = a[j];
+                a[j] = c;
+            }
+        }
+    }
+}
 
 // TẠO MENU
 void Menu()
@@ -74,17 +113,187 @@ void xuLy(int n, int a[])
 {
     switch (n)
     {
+
+    //  XỬ LÝ YÊU CẦU 1
     case 1:
     {
+        cout << "XUAT 50 PHAN TU, MOI HANG 10 PHAN TU" << endl;
+        cout << endl;
         for(int i = 0; i < 5; i++)
         {
             for(int j = i * 10; j <= i * 10 + 9; j++)
             {
                 cout << a[j] << "\t";
             }
+            cout << endl;
         }
         cout << endl;
-    
+        system("pause");
+        system("cls");
+        break;
+    }
+
+    // XỬ LÝ YÊU CẦU 2
+    case 2:
+    {
+        int tong = 0;
+        for(int i = 0; i < MAX; i++)
+        {
+            tong = tong + a[i];
+        }
+        cout << "Trung binh cong cua mang la: " << tong / MAX << endl;
+        cout << endl;
+        system("pause");
+        system("cls");
+        break;
+    }
+
+    // XỬ LÝ YÊU CẦU 3
+    case 3:
+    {
+        // số âm chẵn và số dương lẻ
+        int chan = 0;
+        int le = 0;
+        cout << "So am chan trong mang la: ";
+        for(int i = 0; i < MAX; i++)
+        {
+            if(a[i] % 2 == 0 && a[i] < 0 && a[i] != chan)
+            {
+                chan = a[i];
+                cout << a[i] << "\t";
+            }
+        }
+        cout << endl;
+        cout << "So duong le trong mang la: ";
+        for(int i = 0; i < MAX; i++)
+        {
+            if(a[i] > 0 && a[i] % 2 != 0 && a[i] != le)
+            {
+                le = a[i];
+                cout << a[i] << "\t";
+            }
+        }
+        cout << endl << endl;
+        system("pause");
+        system("cls");
+        break;
+    }
+
+    // XỬ LÝ YÊU CẦU 4
+    case 4:
+    {
+        int tong = 0;
+        int khong = 0;
+        int duong = 0;
+        int am = 0;
+        int chan = 0;
+        int le = 0;
+        int soNguyenTo = 0;
+        int soTronChuc = 0;
+        int soTronTram = 0;
+        int tongSo = 0;
+        // tổng 50 phần tử
+        cout << "Tong 50 phan tu = ";
+        for(int i = 0; i < MAX; i++)
+        {
+            tong = tong + i;
+        }
+        cout << tong << endl << endl;
+        // trung bình cộng
+        cout << "Trung binh cong 50 phan tu = " << (tong / MAX) << endl << endl;
+        // số dương, số âm, số 0, 
+
+        for(int i = 0; i < MAX; i++)
+        {
+            if(a[i] > 0)
+                duong = duong + 1;
+            else if(a[i] < 0)
+                am = am + 1;
+            else
+                khong = khong + 1;
+        } 
+        cout << "So duong trong mang: ";
+        cout << duong << endl << endl;
+        cout << "So am trong mang: ";
+        cout << am << endl << endl;
+        cout << "So 0 trong mang: ";
+        cout << khong << endl << endl;
+        
+        //số chắn, số lẻ
+        cout << "So chan trong mang: ";
+        for(int i = 0; i < MAX; i++)
+        {
+            if(a[i] % 2 == 0)
+                chan = chan + 1;
+            else
+                le = le + 1;
+        } 
+        cout << chan << endl << endl;
+        cout << "So le trong mang la: ";
+        cout << le << endl << endl;
+
+        // số nguyên tố
+        cout << "So nguyen to trong mang la: ";
+        for(int i = 0; i < MAX; i++)
+        {
+            if(timSoNguyenTo(a[i]) == true)
+                soNguyenTo = soNguyenTo + 1;
+        }
+        cout << soNguyenTo << endl << endl;
+
+        // số hàng đơn vị, hàng chục, hagf trăm
+
+        // số tròn chục, số tròn trăm
+        for(int i = 0; i < MAX; i++)
+        {
+            if(a[i] == 100 || a[i] == 200 || a[i] == 300 || a[i] == 400 || a[i] == 500 || a[i] == 600 || a[i] == 700 || a[i] == 800 || a[i] == 900)
+                soTronTram = soTronTram + 1;
+            if(a[i] == 10 || a[i] == 20 || a[i] == 30 || a[i] == 40 || a[i] == 50 || a[i] == 60 || a[i] == 70 || a[i] == 80 || a[i] == 90)
+                soTronChuc = soTronChuc + 1;
+        }
+        cout << "So tron chuc trong mang la: " << soTronChuc << endl;
+        cout << "So tron tram trong mang la: " << soTronTram << endl;
+        cout << endl;
+
+        //số có tổng các chữ số là số chẵn
+        for(int i = 0; i < MAX; i++)
+        {
+            if(timSo(a[i]) % 2 == 0)
+                tongSo = tongSo + 1;
+        }
+        cout << "So so co tong cac chu so la so chan la: " << tongSo << endl;
+        cout << endl;
+
+        system("pause");
+        system("cls");
+        break;
+    }
+
+    //XỬ LÝ YÊU CẦU 5
+    case 5:
+    {
+        //sắp xếp mảng giảm dần
+        int b[MAX];
+        for(int i = 0; i < MAX; i++)
+        {
+            b[i] = a[i];
+        }
+        mangGiamDan(b);
+        cout << "Mang khi chua sap xep: " << endl;
+        for(int i = 0; i < MAX; i++)
+        {
+            cout << a[i] << "\t";
+        }
+        cout << endl << endl;
+        cout << "Mang sau khi sap xep giam dan: " << endl;
+        for(int i = 0; i < MAX; i++)
+        {
+            cout << b[i] << "\t";
+        }
+        cout << endl << endl;
+
+        system("pause");
+        system("cls");
         break;
     }
     case 9:
@@ -104,6 +313,7 @@ int main()
     int a[MAX], n;
     nhap10GiaTriDau(a);
     random40GiaTriCuoi(a);
+    system("cls");
     do
     {
         do
@@ -114,10 +324,18 @@ int main()
             if(n > 0 && n <= 9)
             {
                 cout << "Dang xu ly yeu cau....." << endl;
+                Sleep(2000);
+                system("cls");
                 xuLy(n, a);
             }
             else
+            {
+                cout << endl;
                 cout << "Nhap sai yeu cau" << endl;
+                cout << "Vui long nhap lai" << endl;
+                Sleep(2000);
+                system("cls");
+            } 
         } while (n < 1 || n > 9);
     } while (1);
     return 0;
