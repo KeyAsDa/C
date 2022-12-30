@@ -296,6 +296,89 @@ void xuLy(int n, int a[])
         system("cls");
         break;
     }
+
+    //XỬ LÝ YÊU CẦU 6
+    case 6:
+    {
+        //đảo ngược mảng
+        int t;
+        int b[MAX];
+        for(int i = 0; i < MAX; i++)
+        {
+            b[i] = a[i];
+        }
+        for(int i = 0; i < MAX / 2; i++)
+        {
+            t = b[i];
+            b[i] = b[MAX - 1 - i];
+            b[MAX -1 - i] = t;
+        }
+        cout << "Mang ban dau: " << endl;
+        for(int i = 0; i < MAX; i++)
+        {
+            cout << a[i] <<"\t";
+        }
+        cout << endl << endl;
+        cout << "Mang sau khi dao nguoc: " << endl;
+        for(int i = 0; i < MAX; i++)
+        {
+            cout << b[i] << "\t";
+        }
+        cout << endl << endl;
+
+        system("pause");
+        system("cls");
+        break;
+    }
+
+    //XỬ LÝ YÊU CẦU 7
+    case 7:
+    {
+        // tìm vị trí xuất hiện trong mảng
+        int n;
+        int times = 0;
+        bool check = false;
+        cout << "Nhap n = ";
+        cin >> n;
+        for(int i = 0; i < MAX; i++)
+        {
+            if(a[i] == n)
+            {
+                if(i >=1 && i <= 50)
+                {
+                    cout << "Xuat hien tai vi tri: " << i << endl;
+                }
+                times = times + 1;
+                check = true;
+            }
+        }
+        if(check == true)
+        {
+            cout << "Tong so lan xuat hien la: " << times << endl;
+        }
+        else
+            cout << "Khong co gia tri trong mang" << endl;
+        cout << endl;
+
+        system("pause");
+        system("cls");
+        break;
+    }
+
+    //XỬ LÝ YÊU CẦU 8
+    case 8:
+    {
+        //nhập lại thông tin mảng A
+        cout << "Nhap lai thong tin mang A" << endl << endl;
+        nhap10GiaTriDau(a);
+        random40GiaTriCuoi(a);
+        cout << endl;
+        system("pause");
+        system("cls");
+        break;
+    }
+
+    //thoát chương trình
     case 9:
     {
         cout << "Tam biet" << endl;
