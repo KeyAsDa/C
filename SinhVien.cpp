@@ -191,13 +191,7 @@ int main()
 {
     DanhSach ds;
     docDanhSach(ds);
-    system("cls");
     xuatDanhSach(ds);
-    cout << "DANH SACH HOC SINH DAT HOC BONG" << endl;
-    DanhSach kq = ktTb(ds);
-    xuatDanhSach(kq);
-    ghiHb(kq);
-    delete [] kq.sv;
     delete [] ds.sv;
     return 0;
 }
