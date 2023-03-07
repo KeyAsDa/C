@@ -1,0 +1,9 @@
+1
+Macbook
+5000
+2
+SmartPhone
+3000
+3
+Ti vi
+10000
