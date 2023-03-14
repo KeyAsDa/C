@@ -192,6 +192,7 @@ int main()
     DanhSach ds;
     docDanhSach(ds);
     xuatDanhSach(ds);
+    ghiHb(ds);
     delete [] ds.sv;
     return 0;
 }
