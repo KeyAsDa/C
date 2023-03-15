@@ -100,10 +100,6 @@ void SanPham(Product* product[])
         product[count++] = p; 
     }
     f.close();
-    for(int i = 0; i < count; i++)
-    {
-        cout << product[i]->id << " : " << product[i]->ten << " ---> " << product[i]->gia << " VND" << endl;
-    }
 }
 
 int main()
@@ -112,6 +108,11 @@ int main()
     init(t);
     Product** product = new Product* [M];
     SanPham(product);
+    add(t, product[0]);
+    add(t, product[1]);
+    add(t, product[2]);
+    add(t, product[1]);
+    show(t);
     delete [] product;
     return 0;
 }
