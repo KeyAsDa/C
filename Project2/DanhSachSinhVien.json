@@ -19,5 +19,12 @@
         "gioiTinh": "Nu",
         "hoTen": "Nguyen Van A",
         "tuoi": 19
+    },
+     {
+        "MSSV": "2251063258",
+        "diemTichLuy": 3.5,
+        "gioiTinh": "Nu",
+        "hoTen": "Le Ngoc B",
+        "tuoi": 19
     }
 ]
