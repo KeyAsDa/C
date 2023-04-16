@@ -1,4 +1,3 @@
-﻿#pragma once
 #include "SinhVien.h"
 #include "json.hpp"
 #include <fstream>
