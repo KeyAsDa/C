@@ -1,4 +1,3 @@
-﻿#pragma once
 #include "SinhVien.h"
 
 //HÀM HOÁN ĐỔI
