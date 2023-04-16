@@ -1,4 +1,3 @@
-#pragma once
 #include "SinhVien.h"
 
 void xoaSV(DanhSach& ds)
