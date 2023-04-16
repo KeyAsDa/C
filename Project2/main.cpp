@@ -7,7 +7,6 @@
 #include "XoaSV.h"
 #include "TimKiem.h"
 #include "SapXepSV.h"
-
 #include <Windows.h>
 
 void xuLy(int n, DanhSach& ds)
