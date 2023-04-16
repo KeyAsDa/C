@@ -1,0 +1,30 @@
+[
+    {
+        "MSSV": "2251010035",
+        "diemTichLuy": 3.8,
+        "gioiTinh": "Nam",
+        "hoTen": "Nguyen Nhat Hung",
+        "tuoi": 19
+    },
+    {
+        "MSSV": "123589674",
+        "diemTichLuy": 3.6,
+        "gioiTinh": "Nu",
+        "hoTen": "Nguyen Ngoc Anh",
+        "tuoi": 19
+    },
+    {
+        "MSSV": "2251053364",
+        "diemTichLuy": 3.6,
+        "gioiTinh": "Nu",
+        "hoTen": "Nguyen Truc My",
+        "tuoi": 19
+    },
+    {
+        "MSSV": "2251053342",
+        "diemTichLuy": 3.1,
+        "gioiTinh": "Nu",
+        "hoTen": "Le Bao My",
+        "tuoi": 19
+    }
+]
