@@ -1,4 +1,3 @@
-﻿#pragma once
 #include "SinhVien.h"
 #include <string>
 #include "XuatSinhVien.h"
