@@ -1,4 +1,3 @@
-﻿#pragma once
 #include "SinhVien.h"
 
 // xuất 1 sinh viên
