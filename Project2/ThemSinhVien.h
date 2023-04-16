@@ -29,7 +29,7 @@ void themSinhVien(DanhSach& ds)
 		data["tuoi"] = sv.tuoi;
 		data["diemTichLuy"] = sv.diemTichLuy;
 		student.push_back(data);
-		ds.sv.push_back(sv); //CẬP NHẬT VÀO VECTO SỐ LƯỢNG
+		ds.sv.push_back(sv);
 	}
 
 	// MỞ FILE GHI DỮ LIỆU MỚI VÀO
